@@ -9,7 +9,7 @@ var path = require("path");
 var app = express();
 require('./app/routing/htmlRoutes.js')(app, path);
 require('./app/routing/apiRoutes.js')(app);
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 // Sets up the Express app to handle data parsing. You tell express to parse data
 app.use(bodyParser.urlencoded({ extended: false }));
